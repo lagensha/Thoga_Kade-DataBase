@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.ecom.controller.item.ItemMain">
+   <children>
+      <ImageView fitHeight="450.0" fitWidth="666.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/pic2.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtItemCode" layoutX="42.0" layoutY="43.0" promptText="ItemCode" />
+      <TextField fx:id="txtDescription" layoutX="259.0" layoutY="43.0" promptText="Description" />
+      <TextField fx:id="txtPackPrize" layoutX="479.0" layoutY="43.0" promptText="PackPrize" />
+      <TextField fx:id="txtUnitPrice" layoutX="42.0" layoutY="96.0" promptText="UnitPrice" />
+      <TextField fx:id="txtQtyOnHand" layoutX="259.0" layoutY="96.0" promptText="QtyOnHand" />
+      <Button layoutX="56.0" layoutY="146.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="36.0" prefWidth="76.0" text="Add">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="197.0" layoutY="146.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="39.0" prefWidth="87.0" text="Update">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="355.0" layoutY="146.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="39.0" prefWidth="87.0" text="Delete">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="516.0" layoutY="146.0" mnemonicParsing="false" onAction="#btnResetOnAction" prefHeight="36.0" prefWidth="76.0" text="Reset">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <TableView fx:id="tblItem" layoutX="61.0" layoutY="232.0" prefHeight="212.0" prefWidth="546.0">
+        <columns>
+          <TableColumn fx:id="colItemCode" prefWidth="103.5" text="ItemCode" />
+            <TableColumn fx:id="colDescription" prefWidth="125.5" text="Description" />
+            <TableColumn fx:id="colPackSize" prefWidth="104.0" text="PackSize" />
+            <TableColumn fx:id="colUnitPrize" prefWidth="102.0" text="UnitPrize" />
+            <TableColumn fx:id="colQTY" prefWidth="110.0" text="QtyOnHand" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
