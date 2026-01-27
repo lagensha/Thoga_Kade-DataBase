@@ -117,6 +117,7 @@ public class CustomerMain implements Initializable {
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
+        tblCustomerTable.refresh();
         String id = txtId.getText();
         String title=txtTitle.getText();
         String name= txtName.getText();

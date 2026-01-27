@@ -11,7 +11,7 @@ public class Stater extends Application {
     }
     @Override
     public void start(Stage stage) throws Exception {
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/Item.fxml"))));
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/order.fxml"))));
         stage.show();
     }
 }

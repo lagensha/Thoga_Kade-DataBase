@@ -49,22 +49,43 @@ ItemController itemController = new ItemController();
 
     @FXML
     void btnAddOnAction(ActionEvent event) {
+        String itemCode = txtItemCode.getText();
+        String description = txtDescription.getText();
+        String packSize= txtPackPrize.getText();
+        double unitPrize=Double.parseDouble(txtUnitPrice.getText());
+        int qty=Integer.parseInt(txtQtyOnHand.getText());
+
+        itemController.addItem(itemCode,description,packSize,unitPrize,qty);
+        loadTable();
+        clearText();
 
     }
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
-
+        String id = txtItemCode.getText();
+        itemController.deleteItem(id);
+        loadTable();
+        clearText();
     }
 
     @FXML
     void btnResetOnAction(ActionEvent event) {
-
+            clearText();
     }
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
+        tblItem.refresh();
+        String description = txtDescription.getText();
+        String packSize= txtPackPrize.getText();
+        double unitPrize=Double.parseDouble(txtUnitPrice.getText());
+        int qty=Integer.parseInt(txtQtyOnHand.getText());
+        String itemCode = txtItemCode.getText();
 
+        itemController.updateItem(description,packSize,unitPrize,qty,itemCode);
+        loadTable();
+        clearText();
     }
 
     @Override
