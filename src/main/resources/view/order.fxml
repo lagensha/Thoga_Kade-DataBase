@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="374.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.ecom.controller.order.OrderMain">
    <children>
       <ImageView fitHeight="374.0" fitWidth="848.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">

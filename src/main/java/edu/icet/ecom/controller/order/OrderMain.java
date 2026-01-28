@@ -13,7 +13,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class OrderMain implements Initializable {
-        OrderController orderController = new OrderController();
+    OrderController orderController = new OrderController();
     @FXML
     private TableColumn<?, ?> colCustomerId;
 
@@ -37,27 +37,39 @@ public class OrderMain implements Initializable {
 
     @FXML
     void btnAddOnAction(ActionEvent event) {
-        String orderId=txtOrderId.getText();
+        String id = txtOrderId.getText();
         String orderDate=txtOrderDate.getText();
         String customerId=txtCustomerId.getText();
 
-        orderController.addOrder(orderId,orderDate,customerId);
+        orderController.addOrder(id,orderDate,customerId);
         loadTable();
         clearText();
     }
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
+        String id=txtOrderId.getText();
+        orderController.deleteOrder(id);
+        loadTable();
+        clearText();
 
     }
 
     @FXML
     void btnResetOnAction(ActionEvent event) {
-
+        clearText();
     }
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
+        tblOrder.refresh();
+        String orderDate=txtOrderDate.getText();
+        String customerId=txtCustomerId.getText();
+        String id = txtOrderId.getText();
+
+        orderController.updateOrder(orderDate,customerId,id);
+        loadTable();
+        clearText();
 
     }
 
@@ -67,20 +79,20 @@ public class OrderMain implements Initializable {
         colOrderDate.setCellValueFactory(new PropertyValueFactory<>("orderDate"));
         colCustomerId.setCellValueFactory(new PropertyValueFactory<>("custId"));
         loadTable();
-        tblOrder.getSelectionModel().selectedItemProperty().addListener((observableValue, oldVale, newVale) -> {
-            if(newVale!=null){
-                txtOrderId.setText(newVale.getOrderId());
-                txtOrderDate.setText(newVale.getOrderDate());
-                txtCustomerId.setText(newVale.getCustId());
+        tblOrder.getSelectionModel().selectedItemProperty().addListener((observableValue, oldValue, newValue) -> {
+            if(newValue!=null){
+                txtOrderId.setText(newValue.getOrderId());
+                txtOrderDate.setText(newValue.getOrderDate());
+                txtCustomerId.setText(newValue.getCustId());
             }
         });
     }
-            public void loadTable(){
-                tblOrder.setItems(orderController.viewOrder());
-            }
-    public void clearText(){
+    public void loadTable(){
+        tblOrder.setItems(orderController.viewOrder());
+    }
+    public void  clearText(){
         txtOrderId.clear();
         txtOrderDate.clear();
-        txtCustomerId.clear();
+        txtOrderDate.clear();
     }
 }

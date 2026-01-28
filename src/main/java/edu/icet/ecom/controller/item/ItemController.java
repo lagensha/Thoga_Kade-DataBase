@@ -1,7 +1,7 @@
 package edu.icet.ecom.controller.item;
 
 import edu.icet.ecom.db.DBConnection;
-import edu.icet.ecom.model.ItemDTO;
+import edu.icet.ecom.model.dto.ItemDTO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 

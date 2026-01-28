@@ -1,6 +1,6 @@
 package edu.icet.ecom.controller.item;
 
-import edu.icet.ecom.model.ItemDTO;
+import edu.icet.ecom.model.dto.ItemDTO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
